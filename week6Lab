@@ -1,0 +1,75 @@
+beste@beste:~$ mkdir student
+beste@beste:~$ cd student
+beste@beste:~/student$ touch a.txt
+beste@beste:~/student$ ls
+a.txt
+beste@beste:~/student$ cat> a.txt
+beste
+akdik
+180709002^C
+beste@beste:~/student$ grep bes a.txt
+beste
+beste@beste:~/student$ nano a.txt
+beste@beste:~/student$ ls -l
+total 4
+-rw-rw-r-- 1 beste beste 22 Mar 22 22:46 a.txt
+beste@beste:~/student$ cat a.txt
+beste
+akdik
+180709002
+beste@beste:~/student$ cd ..
+beste@beste:~$ mkdir studentBackup
+beste@beste:~$ cp student studentBackup
+cp: -r not specified; omitting directory 'student'
+beste@beste:~$ cp -r student studentBackup
+beste@beste:~$ rm studentBackup
+rm: cannot remove 'studentBackup': Is a directory
+beste@beste:~$ cp -r a.txt studentBackup
+cp: cannot stat 'a.txt': No such file or directory
+beste@beste:~$ cp -r student/a.txt studentBackup
+beste@beste:~$ chmod -rwx studenBackup
+chmod: cannot access 'studenBackup': No such file or directory
+beste@beste:~$ chmod -rwx studentBackup
+beste@beste:~$ chmod +rwx student
+beste@beste:~$ cd studentBackup
+bash: cd: studentBackup: Permission denied
+beste@beste:~$ cd student
+beste@beste:~/student$ touch b.txt
+beste@beste:~/student$ cat> b.txt
+123456789
+987654321
+^C
+beste@beste:~/student$ cat b.txt
+123456789
+987654321
+beste@beste:~/student$ chmod -rwx studentBackup
+chmod: cannot access 'studentBackup': No such file or directory
+beste@beste:~/student$ cd ..
+beste@beste:~$ chmod -rwx studentBackup
+beste@beste:~$ chmod -w student
+beste@beste:~$ cd student
+beste@beste:~/student$ touch c.txt
+touch: cannot touch 'c.txt': Permission denied
+beste@beste:~/student$ chmod +w student
+chmod: cannot access 'student': No such file or directory
+beste@beste:~/student$ cd ..
+beste@beste:~$ chmod +w student
+beste@beste:~$ cd student
+beste@beste:~/student$ touch c.txt
+beste@beste:~/student$ sudo nano c.txt 
+[sudo] password for beste: 
+beste@beste:~/student$ ls
+a.txt  b.txt  c.txt
+beste@beste:~/student$ cat c.txt
+llalalalal
+lalal
+lallslalsas
+adsafasf
+beste@beste:~/student$ cat a.txt
+beste
+akdik
+180709002
+beste@beste:~/student$ cat b.txt
+123456789
+987654321
+
